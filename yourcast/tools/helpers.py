@@ -1,6 +1,24 @@
 import json
+import logging
+from logging.handlers import RotatingFileHandler
 
+import coloredlogs
 import requests
+
+
+def setup_logger(name, log_file, level=logging.INFO):
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+
+    log_handler = RotatingFileHandler(filename=log_file, maxBytes=2000000, backupCount=5)
+    log_handler.setLevel(level)
+    formatter = logging.Formatter("%(asctime)s %(levelname)s %(message)s")
+    log_handler.setFormatter(formatter)
+    logger.addHandler(log_handler)
+
+    coloredlogs.install(level=level, logger=logger)
+
+    return logger
 
 
 def check_if_valid_url(url):
