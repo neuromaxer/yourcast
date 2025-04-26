@@ -13,3 +13,6 @@ dependencies = [
     "requests>=2.32.3",
     "setuptools>=79.0.1",
 ]
+
+[tool.ruff]
+line-length = 160
