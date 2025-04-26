@@ -1,0 +1,554 @@
+{
+    "a16z Podcast": {
+        "url": "https://www.readablepod.com/pod/a16z-podcast",
+        "n_transcripts": 187
+    },
+    "Aarthi and Sriram's Good Time Show": {
+        "url": "https://www.readablepod.com/pod/aarthi-and-srirams-good-time-show",
+        "n_transcripts": 14
+    },
+    "Above Board": {
+        "url": "https://www.readablepod.com/pod/above-board",
+        "n_transcripts": 34
+    },
+    "ACQ2 by Acquired": {
+        "url": "https://www.readablepod.com/pod/acq2-by-acquired",
+        "n_transcripts": 107
+    },
+    "Acquired": {
+        "url": "https://www.readablepod.com/pod/acquired",
+        "n_transcripts": 13
+    },
+    "Acquisitions Anonymous": {
+        "url": "https://www.readablepod.com/pod/acquisitions-anonymous",
+        "n_transcripts": 281
+    },
+    "Ali Abdaal": {
+        "url": "https://www.readablepod.com/pod/ali-abdaal",
+        "n_transcripts": 93
+    },
+    "All About AI": {
+        "url": "https://www.readablepod.com/pod/all-about-ai",
+        "n_transcripts": 134
+    },
+    "All the Hacks": {
+        "url": "https://www.readablepod.com/pod/all-the-hacks",
+        "n_transcripts": 209
+    },
+    "All-In with Chamath, Jason, Sacks & Friedberg": {
+        "url": "https://www.readablepod.com/pod/all-in-with-chamath-jason-sacks-friedberg",
+        "n_transcripts": 36
+    },
+    "Art of Investing": {
+        "url": "https://www.readablepod.com/pod/art-of-investing",
+        "n_transcripts": 8
+    },
+    "Bendy Bodies with the Hypermobility MD": {
+        "url": "https://www.readablepod.com/pod/bendy-bodies",
+        "n_transcripts": 121
+    },
+    "Billion Dollar Creator": {
+        "url": "https://www.readablepod.com/pod/billion-dollar-creator",
+        "n_transcripts": 64
+    },
+    "Bootstrapped Web": {
+        "url": "https://www.readablepod.com/pod/bootstrapped-web",
+        "n_transcripts": 66
+    },
+    "Bounce! Conversations with Larry Weeks": {
+        "url": "https://www.readablepod.com/pod/bounce",
+        "n_transcripts": 84
+    },
+    "Build Your SaaS": {
+        "url": "https://www.readablepod.com/pod/build-your-saas",
+        "n_transcripts": 19
+    },
+    "Building with Joao": {
+        "url": "https://www.readablepod.com/pod/building-with-joao",
+        "n_transcripts": 22
+    },
+    "Business and Marketing": {
+        "url": "https://www.readablepod.com/pod/business-and-marketing",
+        "n_transcripts": 19
+    },
+    "Business Untitled": {
+        "url": "https://www.readablepod.com/pod/business-untitled",
+        "n_transcripts": 58
+    },
+    "Charisma on Command": {
+        "url": "https://www.readablepod.com/pod/charisma-on-command",
+        "n_transcripts": 27
+    },
+    "Chase Jarvis": {
+        "url": "https://www.readablepod.com/pod/chase-jarvis",
+        "n_transcripts": 204
+    },
+    "Chat with Traders": {
+        "url": "https://www.readablepod.com/pod/chat-with-traders",
+        "n_transcripts": 86
+    },
+    "Chit Chat Money": {
+        "url": "https://www.readablepod.com/pod/chit-chat-money",
+        "n_transcripts": 620
+    },
+    "Coaching Real Leaders": {
+        "url": "https://www.readablepod.com/pod/coaching-real-leaders",
+        "n_transcripts": 42
+    },
+    "Code and Conquer": {
+        "url": "https://www.readablepod.com/pod/code-and-conquer",
+        "n_transcripts": 34
+    },
+    "Cold Case Canada": {
+        "url": "https://www.readablepod.com/pod/cold-case-canada",
+        "n_transcripts": 35
+    },
+    "Conversations With Coleman": {
+        "url": "https://www.readablepod.com/pod/conversations-with-coleman",
+        "n_transcripts": 107
+    },
+    "Dan Carlin's Hardcore History": {
+        "url": "https://www.readablepod.com/pod/dan-carlin-hardcore-history",
+        "n_transcripts": 2
+    },
+    "Dan Carlin's Hardcore History: Addendum": {
+        "url": "https://www.readablepod.com/pod/dan-carlin-hardcore-history-addendum",
+        "n_transcripts": 2
+    },
+    "Do It In Public": {
+        "url": "https://www.readablepod.com/pod/do-it-in-public",
+        "n_transcripts": 40
+    },
+    "Doc Williams": {
+        "url": "https://www.readablepod.com/pod/doc-williams",
+        "n_transcripts": 31
+    },
+    "Empire": {
+        "url": "https://www.readablepod.com/pod/empire",
+        "n_transcripts": 200
+    },
+    "Fake Doctors, Real Friends with Zach and Donald": {
+        "url": "https://www.readablepod.com/pod/fake-doctors-real-friends",
+        "n_transcripts": 137
+    },
+    "Financial Feminist": {
+        "url": "https://www.readablepod.com/pod/financial-feminist",
+        "n_transcripts": 209
+    },
+    "Founder Quest": {
+        "url": "https://www.readablepod.com/pod/founder-quest",
+        "n_transcripts": 21
+    },
+    "Founders": {
+        "url": "https://www.readablepod.com/pod/founders",
+        "n_transcripts": 383
+    },
+    "Freakonomics Radio": {
+        "url": "https://www.readablepod.com/pod/freakonomics",
+        "n_transcripts": 134
+    },
+    "Garry Tan": {
+        "url": "https://www.readablepod.com/pod/garry-tan",
+        "n_transcripts": 7
+    },
+    "Gilbert Gottfried's Amazing Colossal Podcast": {
+        "url": "https://www.readablepod.com/pod/gilbert-gottfried-amazing-colossal-podcast",
+        "n_transcripts": 223
+    },
+    "Gossip Mongers": {
+        "url": "https://www.readablepod.com/pod/gossip-mongers",
+        "n_transcripts": 16
+    },
+    "Greymatter": {
+        "url": "https://www.readablepod.com/pod/greymatter",
+        "n_transcripts": 10
+    },
+    "Hackers Incorporated": {
+        "url": "https://www.readablepod.com/pod/hackers-incorporated",
+        "n_transcripts": 20
+    },
+    "Hello Internet": {
+        "url": "https://www.readablepod.com/pod/hello-internet",
+        "n_transcripts": 100
+    },
+    "Here's Where It Gets Interesting": {
+        "url": "https://www.readablepod.com/pod/sharon-says-so",
+        "n_transcripts": 33
+    },
+    "How I Built This with Guy Raz": {
+        "url": "https://www.readablepod.com/pod/how-I-built-this",
+        "n_transcripts": 111
+    },
+    "How to Take Over the World": {
+        "url": "https://www.readablepod.com/pod/how-to-take-over-the-world",
+        "n_transcripts": 108
+    },
+    "In Machines We Trust": {
+        "url": "https://www.readablepod.com/pod/in-machines-we-trust",
+        "n_transcripts": 15
+    },
+    "Indie Bites": {
+        "url": "https://www.readablepod.com/pod/indie-bites",
+        "n_transcripts": 63
+    },
+    "Indie Hackers": {
+        "url": "https://www.readablepod.com/pod/indie-hackers",
+        "n_transcripts": 26
+    },
+    "Invest Like the Best": {
+        "url": "https://www.readablepod.com/pod/invest-like-the-best",
+        "n_transcripts": 200
+    },
+    "It Could Happen Here": {
+        "url": "https://www.readablepod.com/pod/it-could-happen-here",
+        "n_transcripts": 220
+    },
+    "Legends of the Old West": {
+        "url": "https://www.readablepod.com/pod/legends-of-the-old-west",
+        "n_transcripts": 242
+    },
+    "Lemon Squeezy": {
+        "url": "https://www.readablepod.com/pod/lemon-squeezy",
+        "n_transcripts": 27
+    },
+    "Lenny's Podcast: Product | Growth | Career": {
+        "url": "https://www.readablepod.com/pod/lenny-podcast",
+        "n_transcripts": 212
+    },
+    "Locked On Hawks": {
+        "url": "https://www.readablepod.com/pod/locked-on-hawks",
+        "n_transcripts": 638
+    },
+    "Macrodose": {
+        "url": "https://www.readablepod.com/pod/macrodose",
+        "n_transcripts": 162
+    },
+    "Makers.dev": {
+        "url": "https://www.readablepod.com/pod/makers-dev",
+        "n_transcripts": 48
+    },
+    "Making Media": {
+        "url": "https://www.readablepod.com/pod/making-media",
+        "n_transcripts": 57
+    },
+    "Making Sense with Sam Harris": {
+        "url": "https://www.readablepod.com/pod/making-sense-with-sam-harris",
+        "n_transcripts": 426
+    },
+    "Marketing Against the Grain": {
+        "url": "https://www.readablepod.com/pod/marketing-against-the-grain",
+        "n_transcripts": 282
+    },
+    "Matt Wolfe": {
+        "url": "https://www.readablepod.com/pod/matt-wolfe",
+        "n_transcripts": 361
+    },
+    "Michael Girdley": {
+        "url": "https://www.readablepod.com/pod/michael-girdley",
+        "n_transcripts": 117
+    },
+    "Modern Wisdom": {
+        "url": "https://www.readablepod.com/pod/modern-wisdom",
+        "n_transcripts": 918
+    },
+    "Mom and Dad Are Fighting | Slate's parenting show": {
+        "url": "https://www.readablepod.com/pod/mom-and-dad-are-fighting",
+        "n_transcripts": 508
+    },
+    "Moment of Zen": {
+        "url": "https://www.readablepod.com/pod/moment-of-zen",
+        "n_transcripts": 106
+    },
+    "MoneyWise": {
+        "url": "https://www.readablepod.com/pod/moneywise",
+        "n_transcripts": 45
+    },
+    "Morning Maker Show": {
+        "url": "https://www.readablepod.com/pod/morning-maker-show",
+        "n_transcripts": 86
+    },
+    "Mostly Technical": {
+        "url": "https://www.readablepod.com/pod/mostly-technical",
+        "n_transcripts": 81
+    },
+    "Multithreaded Income": {
+        "url": "https://www.readablepod.com/pod/multithreaded-income",
+        "n_transcripts": 46
+    },
+    "My Favorite Murder with Karen Kilgariff and Georgia Hardstark": {
+        "url": "https://www.readablepod.com/pod/my-favorite-murder-with-karen-kilgariff-and-georgia-hardstark",
+        "n_transcripts": 486
+    },
+    "My First Million": {
+        "url": "https://www.readablepod.com/pod/mfm",
+        "n_transcripts": 968
+    },
+    "Naval": {
+        "url": "https://www.readablepod.com/pod/naval",
+        "n_transcripts": 136
+    },
+    "New Heights with Jason and Travis Kelce": {
+        "url": "https://www.readablepod.com/pod/new-heights",
+        "n_transcripts": 86
+    },
+    "Newcomer": {
+        "url": "https://www.readablepod.com/pod/newcomer-podcast",
+        "n_transcripts": 98
+    },
+    "No Such Thing as a Fish": {
+        "url": "https://www.readablepod.com/pod/no-such-thing-as-a-fish",
+        "n_transcripts": 505
+    },
+    "Noah Kagan": {
+        "url": "https://www.readablepod.com/pod/noah-kagan",
+        "n_transcripts": 430
+    },
+    "Noah Kagan Presents": {
+        "url": "https://www.readablepod.com/pod/noah-kagan-presents",
+        "n_transcripts": 381
+    },
+    "Normal Gossip": {
+        "url": "https://www.readablepod.com/pod/normal-gossip",
+        "n_transcripts": 24
+    },
+    "Not Investment Advice": {
+        "url": "https://www.readablepod.com/pod/not-investment-advice",
+        "n_transcripts": 209
+    },
+    "Odd Lots": {
+        "url": "https://www.readablepod.com/pod/odd-lots",
+        "n_transcripts": 828
+    },
+    "On The Media": {
+        "url": "https://www.readablepod.com/pod/on-the-media",
+        "n_transcripts": 182
+    },
+    "Only Murders in the Building": {
+        "url": "https://www.readablepod.com/pod/only-murders-in-the-building",
+        "n_transcripts": 17
+    },
+    "Open Threads": {
+        "url": "https://www.readablepod.com/pod/open-threads",
+        "n_transcripts": 57
+    },
+    "Our Fake History": {
+        "url": "https://www.readablepod.com/pod/our-fake-history",
+        "n_transcripts": 45
+    },
+    "Our Future": {
+        "url": "https://www.readablepod.com/pod/our-future",
+        "n_transcripts": 57
+    },
+    "Owned and Operated": {
+        "url": "https://www.readablepod.com/pod/owned-and-operated",
+        "n_transcripts": 166
+    },
+    "Pat Flynn": {
+        "url": "https://www.readablepod.com/pod/pat-flynn",
+        "n_transcripts": 896
+    },
+    "People Who Suffer": {
+        "url": "https://www.readablepod.com/pod/people-who-suffer",
+        "n_transcripts": 45
+    },
+    "Plain English with Derek Thompson": {
+        "url": "https://www.readablepod.com/pod/plain-english",
+        "n_transcripts": 237
+    },
+    "Planet Money : NPR": {
+        "url": "https://www.readablepod.com/pod/planet-money",
+        "n_transcripts": 325
+    },
+    "Product Journey": {
+        "url": "https://www.readablepod.com/pod/product-journey",
+        "n_transcripts": 30
+    },
+    "Publicly Sited": {
+        "url": "https://www.readablepod.com/pod/publicly-sited",
+        "n_transcripts": 6
+    },
+    "Rework": {
+        "url": "https://www.readablepod.com/pod/rework",
+        "n_transcripts": 79
+    },
+    "Scissor Bros": {
+        "url": "https://www.readablepod.com/pod/scissor-bros",
+        "n_transcripts": 33
+    },
+    "Searching for Saas": {
+        "url": "https://www.readablepod.com/pod/searching-for-saas",
+        "n_transcripts": 70
+    },
+    "Sherlock & Co.": {
+        "url": "https://www.readablepod.com/pod/sherlock-co",
+        "n_transcripts": 33
+    },
+    "Ship it and Sip it": {
+        "url": "https://www.readablepod.com/pod/ship-it-and-sip-it",
+        "n_transcripts": 67
+    },
+    "Silicon Street": {
+        "url": "https://www.readablepod.com/pod/silicon-street",
+        "n_transcripts": 79
+    },
+    "Solos": {
+        "url": "https://www.readablepod.com/pod/solos",
+        "n_transcripts": 33
+    },
+    "Spittin Chiclets": {
+        "url": "https://www.readablepod.com/pod/spittin-chiclets",
+        "n_transcripts": 39
+    },
+    "Startup To Last": {
+        "url": "https://www.readablepod.com/pod/startup-to-last",
+        "n_transcripts": 57
+    },
+    "Startup To Something": {
+        "url": "https://www.readablepod.com/pod/startup-to-something",
+        "n_transcripts": 42
+    },
+    "Startups for the Rest of Us": {
+        "url": "https://www.readablepod.com/pod/startups-for-the-rest-of-us",
+        "n_transcripts": 162
+    },
+    "StrictlyVC Download": {
+        "url": "https://www.readablepod.com/pod/strictlyvc-download",
+        "n_transcripts": 69
+    },
+    "The Art of Improvement": {
+        "url": "https://www.readablepod.com/pod/the-art-of-improvement",
+        "n_transcripts": 312
+    },
+    "The Bootstrapped Founder": {
+        "url": "https://www.readablepod.com/pod/the-bootstrapped-founder",
+        "n_transcripts": 251
+    },
+    "The Closer Look": {
+        "url": "https://www.readablepod.com/pod/the-closer-look",
+        "n_transcripts": 13
+    },
+    "The Crash Program": {
+        "url": "https://www.readablepod.com/pod/the-crash-program",
+        "n_transcripts": 41
+    },
+    "The Detroit Lions Podcast": {
+        "url": "https://www.readablepod.com/pod/the-detroit-lions-podcast",
+        "n_transcripts": 97
+    },
+    "The Dock with Omar Waseem": {
+        "url": "https://www.readablepod.com/pod/the-dock-with-omar-waseem",
+        "n_transcripts": 44
+    },
+    "The Focus Group Podcast": {
+        "url": "https://www.readablepod.com/pod/the-focus-group-podcast",
+        "n_transcripts": 31
+    },
+    "The Impactology Podcast": {
+        "url": "https://www.readablepod.com/pod/impactology",
+        "n_transcripts": 10
+    },
+    "The India Energy Hour": {
+        "url": "https://www.readablepod.com/pod/the-india-energy-hour",
+        "n_transcripts": 6
+    },
+    "The Marketing Secrets Show": {
+        "url": "https://www.readablepod.com/pod/marketing-secrets",
+        "n_transcripts": 245
+    },
+    "The Myth of Girl Internet": {
+        "url": "https://www.readablepod.com/pod/the-myth-of-girl-internet",
+        "n_transcripts": 69
+    },
+    "The Network State Podcast": {
+        "url": "https://www.readablepod.com/pod/the-network-state-podcast",
+        "n_transcripts": 10
+    },
+    "The Non-Tech Founders": {
+        "url": "https://www.readablepod.com/pod/the-non-tech-founders",
+        "n_transcripts": 18
+    },
+    "The Official SaaStr Podcast: SaaS | Founders | Investors": {
+        "url": "https://www.readablepod.com/pod/the-official-saastr-podcast-saas-founders-investors",
+        "n_transcripts": 72
+    },
+    "The Primeagen": {
+        "url": "https://www.readablepod.com/pod/primeagen",
+        "n_transcripts": 73
+    },
+    "The Prof G Pod with Scott Galloway": {
+        "url": "https://www.readablepod.com/pod/the-prof-g-pod-with-scott-galloway",
+        "n_transcripts": 552
+    },
+    "The Realignment": {
+        "url": "https://www.readablepod.com/pod/the-realignment",
+        "n_transcripts": 68
+    },
+    "The Startup Ideas": {
+        "url": "https://www.readablepod.com/pod/the-startup-ideas",
+        "n_transcripts": 329
+    },
+    "The Twenty Minute VC (20VC): Venture Capital | Startup Funding | The Pitch": {
+        "url": "https://www.readablepod.com/pod/the-twenty-minute-vc",
+        "n_transcripts": 619
+    },
+    "The Vergecast": {
+        "url": "https://www.readablepod.com/pod/the-vergecast",
+        "n_transcripts": 72
+    },
+    "The World of RPGs": {
+        "url": "https://www.readablepod.com/pod/the-world-of-rpgs",
+        "n_transcripts": 9
+    },
+    "ThePrimeTime": {
+        "url": "https://www.readablepod.com/pod/theprimetime",
+        "n_transcripts": 939
+    },
+    "This American Life": {
+        "url": "https://www.readablepod.com/pod/this-american-life",
+        "n_transcripts": 31
+    },
+    "This Indie Life": {
+        "url": "https://www.readablepod.com/pod/this-indie-life",
+        "n_transcripts": 23
+    },
+    "This View of Life": {
+        "url": "https://www.readablepod.com/pod/this-view-of-life",
+        "n_transcripts": 38
+    },
+    "This Week in Startups": {
+        "url": "https://www.readablepod.com/pod/this-week-in-startups",
+        "n_transcripts": 190
+    },
+    "Top Traders Unplugged": {
+        "url": "https://www.readablepod.com/pod/top-traders-unplugged",
+        "n_transcripts": 183
+    },
+    "Unicorn Builders": {
+        "url": "https://www.readablepod.com/pod/unicorn-builders",
+        "n_transcripts": 61
+    },
+    "Value Investing with Legends": {
+        "url": "https://www.readablepod.com/pod/value-investing-with-legends",
+        "n_transcripts": 62
+    },
+    "Weaviate Podcast": {
+        "url": "https://www.readablepod.com/pod/weaviate-podcast",
+        "n_transcripts": 17
+    },
+    "What I've learned": {
+        "url": "https://www.readablepod.com/pod/what-ive-learned",
+        "n_transcripts": 128
+    },
+    "What's Next": {
+        "url": "https://www.readablepod.com/pod/whats-next",
+        "n_transcripts": 20
+    },
+    "Y Combinator": {
+        "url": "https://www.readablepod.com/pod/y-combinator",
+        "n_transcripts": 257
+    },
+    "You're Dead to Me": {
+        "url": "https://www.readablepod.com/pod/youre-dead-to-me",
+        "n_transcripts": 28
+    }
+}
