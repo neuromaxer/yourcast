@@ -3,10 +3,12 @@ import json
 import os
 import time
 from typing import List
+import logging
 
 import openai
 from pinecone import Index, Pinecone, ServerlessSpec
 from pydantic import BaseModel
+from tqdm import tqdm
 
 from yourcast.scraper.crawler import Sentence
 from yourcast.scraper.run_scrape import EpisodeScrapeResult
@@ -65,6 +67,31 @@ Format each output as a message with its timestamp, removing any bullet points o
 class EpisodeParser:
     def __init__(self, pinecone_index=None):
         self.pinecone_index = pinecone_index
+
+    def episode_already_upserted(self, source_podcast_name: str, published_date: str, episode_name: str) -> bool:
+        """Check if an episode has already been upserted to Pinecone by metadata."""
+        if not self.pinecone_index:
+            raise ValueError("Pinecone index not initialized.")
+        # Query Pinecone for a vector with matching metadata
+        # We'll use a metadata filter for all three fields
+        query_filter = {
+            "source_podcast_name": source_podcast_name,
+            "published_date": published_date,
+            "episode_name": episode_name,
+        }
+        # Query with a dummy vector (all zeros) and top_k=1, using filter
+        # (Assumes at least one vector per episode)
+        try:
+            response = self.pinecone_index.query(
+                vector=[0.0] * 1536,
+                top_k=1,
+                filter=query_filter,
+                include_metadata=False,
+            )
+            return len(response.matches) > 0
+        except Exception as e:
+            print(f"Error querying Pinecone: {e}")
+            return False
 
     def parse(self, scraped_episode_file: EpisodeScrapeResult):
         transcript = self.concatenate_sentences(scraped_episode_file.sentences)
@@ -155,14 +182,37 @@ def initialise_pinecone_index(index_name):
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
     scraped_episodes_files = os.listdir("yourcast/assets/scrape_results/")
     index_name = "yourpod"
     index = initialise_pinecone_index(index_name)
 
-    for scraped_episode_file in scraped_episodes_files:
+    upserted_count = 0
+
+    for scraped_episode_file in tqdm(scraped_episodes_files, desc="Upserting episodes", unit="episode"):
         scraped_episode = EpisodeScrapeResult(**load_json(f"yourcast/assets/scrape_results/{scraped_episode_file}"))
         parser = EpisodeParser(index)
+        # Check if already upserted
+        if parser.episode_already_upserted(
+            scraped_episode.podcast_name,
+            scraped_episode.publication_date,
+            scraped_episode.episode_name,
+        ):
+            logging.info(
+                f"Episode '{scraped_episode.episode_name}' from '{scraped_episode.podcast_name}' ({scraped_episode.publication_date}) already upserted. Skipping."
+            )
+            continue
+
         parsed_bulletpoints = parser.parse(scraped_episode)
         parser.upsert_bulletpoints_batch(
-            parsed_bulletpoints.bullet_points, scraped_episode.podcast_name, scraped_episode.publication_date, scraped_episode.episode_name
+            parsed_bulletpoints.bullet_points,
+            scraped_episode.podcast_name,
+            scraped_episode.publication_date,
+            scraped_episode.episode_name,
+        )
+        upserted_count += 1
+        logging.info(
+            f"Parsed and upserted episode '{scraped_episode.episode_name}' from '{scraped_episode.podcast_name}' ({scraped_episode.publication_date}) to Pinecone. "
+            f"Progress: {upserted_count}/{len(scraped_episodes_files)}"
         )
