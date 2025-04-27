@@ -1,77 +1,69 @@
+# YourCast
+
+YourCast is a modern podcast discovery and transcript search platform. It aggregates thousands of podcast episodes and their transcripts, making it easy to find, browse, and analyze content from a wide variety of shows.
+
+## Features
+
+- **Podcast Directory:** Browse a large collection of podcasts, each with metadata and transcript counts.
+- **Episode Search:** Quickly find episodes by title, podcast, or publication date.
+- **Transcript Access:** Access and analyze transcripts for each episode.
+- **Modern Frontend:** Built with Vite, React, TypeScript, shadcn-ui, and Tailwind CSS for a fast and responsive user experience.
+- **API Backend:** Powered by FastAPI for robust and scalable API endpoints.
+- **Data Aggregation:** Uses Playwright for web scraping and DuckDuckGo for search integration.
+- **AI & Embeddings:** Integrates with OpenAI and Pinecone for advanced search and analysis features.
+
+## Technologies Used
+
+- **Frontend:** Vite, React, TypeScript, shadcn-ui, Tailwind CSS
+- **Backend:** FastAPI, Pydantic, Python 3.12+
+- **Data & AI:** OpenAI, Pinecone, fastembed, gTTS, markdownify
+- **Utilities:** Playwright, Requests, python-dotenv, python-slugify, Tenacity, coloredlogs
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js & npm](https://github.com/nvm-sh/nvm#installing-and-updating) (for frontend)
+- Python 3.12+ (for backend)
+
+### Setup
+
+1. **Clone the repository:**
 
 
-Backend (yourcast/api/api.py)
-Overview
-The backend is built with FastAPI and provides endpoints to:
-Search podcast bulletpoints using semantic search (via OpenAI embeddings and Pinecone vector database).
-Generate audio summaries of podcast episodes, turning key takeaways into a natural-sounding dialogue and converting it to MP3 using gTTS.
-Features
-Semantic Search: Query podcast episode highlights using natural language.
-Audio Summaries: Generate and download MP3 summaries as engaging host dialogues.
-CORS Enabled: Allows frontend (e.g., on localhost:8080) to interact with the API.
-Endpoints
-GET /
-Welcome message and API usage hint.
-GET /search?query=...&limit=...
-Search for relevant podcast bulletpoints using a natural language query.
-POST /summary_audio
-Generate an MP3 audio summary from provided podcast key takeaways.
-Technologies
-FastAPI for API endpoints
-OpenAI for embeddings and LLM completions
-Pinecone for vector search
-gTTS for text-to-speech
-Pydantic for data validation
-Setup
-1. Install dependencies:
-gtts
-Set environment variables:
-OPENAI_API_KEY
-PINECONE_API_KEY
-(Optional) PINECONE_INDEX_NAME
-3. Run the server:
-reload
-4. API Docs:
-Visit http://localhost:8000/docs for interactive documentation.
+2. **Install dependencies:**
+    ```sh
+    npm install 
+    ```
+
+3. **Start the development server:**
+    ```sh
+    npm run dev
+    ```
+
+### Backend Setup
+
+1. **Install Python dependencies:**
+    ```sh
+    uv sync  # install uv
+    ```
+
+2. **Run the FastAPI server:**
+    ```sh
+    python -m yourcast.api.api     
+    ```
+
+### Data Assets
+
+- **Podcast Metadata:** `yourcast/assets/podcast_urls.json`  
+  Contains podcast names, URLs, and transcript counts.
+- **Episode Metadata:** `yourcast/assets/episode_urls.json`  
+  Contains episode titles, podcast names, publication dates, and URLs.
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
+
 ---
-Frontend
-Overview
-The frontend (not shown in your code, but implied by CORS and typical usage) is likely a web application running on localhost:8080 that interacts with the backend API.
-Features
-Search Interface: Enter queries to find relevant podcast episode highlights.
-Audio Summary Generator: Select episodes and generate/download audio summaries as host dialogues.
-Technologies (Assumed)
-Vue.js or React (common for port 8080)
-Fetch/Axios for API requests
-Audio Player for playing MP3 summaries
-Setup
-1. Install dependencies:
-install
-Run the development server:
-serve
-Access the app:
-Visit http://localhost:8080
-Example Usage
-Search:
-Enter a question like “What did the hosts say about AI in episode 5?” and view relevant bulletpoints.
-Generate Audio Summary:
-Select key takeaways, choose summary style/tone/length, and download or play the generated MP3.
----
-What Does YourCast Do?
-YourCast makes podcast content more accessible and interactive by:
-Summarizing episodes into key bulletpoints.
-Enabling semantic search so users can find highlights by asking questions in plain English.
-Generating natural-sounding audio summaries in the form of host dialogues, making it easy to catch up on episodes or share highlights.
----
-Project Structure (Inferred)
-)
----
-Contributing
-Fork the repo and clone it.
-Set up backend and frontend as above.
-Submit pull requests for improvements or bug fixes.
----
-License
-MIT License
----
-Let me know if you want a more detailed frontend README or a template for a specific framework!
+
+*This project is not affiliated with ReadablePod or any of the podcasts listed. All data is aggregated for educational and research purposes only.*
