@@ -86,9 +86,9 @@ async def search_bulletpoints(
                     title=metadata.episode_name,
                     host=metadata.source_podcast_name,
                     hostId=make_id(metadata.source_podcast_name),
-                    image="",
                     summary=episode_summaries[metadata.episode_name],
                     date=metadata.published_date,
+                    image=metadata.image,
                     keyTakeaways=[bulletpoint]
                 )
             else:
