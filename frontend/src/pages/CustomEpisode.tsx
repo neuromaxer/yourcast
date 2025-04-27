@@ -15,7 +15,7 @@ const CustomEpisode = () => {
   }
 
   const { audioUrl, audioFilename } = location.state;
-  
+
 
 
   // const length = location.state?.length;
@@ -80,8 +80,8 @@ const CustomEpisode = () => {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Banner Image */}
         <div className="relative w-full h-[400px]">
-          <img 
-            src={episode.image} 
+          <img
+            src={episode.image}
             alt={episode.title}
             className="w-full h-full object-cover"
           />
@@ -99,7 +99,7 @@ const CustomEpisode = () => {
 
         <div className="p-6">
           {/* Audio Player Section */}
-          <AudioPlayer 
+          <AudioPlayer
             audioUrl={audioUrl}
           />
 
@@ -137,4 +137,4 @@ const CustomEpisode = () => {
   );
 };
 
-export default CustomEpisode; 
+export default CustomEpisode;

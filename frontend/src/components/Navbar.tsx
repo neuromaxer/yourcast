@@ -10,7 +10,7 @@ const Navbar = () => {
           <Link to="/" className="text-2xl font-bold serif-headline text-black">
             YourCast**
           </Link>
-                  
+
         </div>
       </div>
     </nav>

@@ -26,9 +26,9 @@ const Index = () => {
   }));
 
   // Filter hosts to only include those with episodes, or use all hosts if episodes is empty
-  const availableHosts = episodes.length > 0 
-    ? allHosts.filter(host => 
-        episodes.some(episode => 
+  const availableHosts = episodes.length > 0
+    ? allHosts.filter(host =>
+        episodes.some(episode =>
           episode.host.toLowerCase().replace(/\s+/g, '-') === host.id
         )
       )

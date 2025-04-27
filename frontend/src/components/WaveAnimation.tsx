@@ -18,8 +18,8 @@ const waves = [
   { d: "M0,100 C500,200 700,0 1200,100 L1200,200 L0,200 Z", colors: ["#FF5F6D","#FFC371","#FF5F6D"] }
 ];
 
-const WaveAnimation: React.FC<WaveAnimationProps> = ({ 
-  isAnimating = false, 
+const WaveAnimation: React.FC<WaveAnimationProps> = ({
+  isAnimating = false,
   onWaveChange,
   currentWaveIndex = 0,
   className
@@ -42,12 +42,12 @@ const WaveAnimation: React.FC<WaveAnimationProps> = ({
     if (waveRef.current && morphRef.current && containerRef.current) {
       const currentD = waveRef.current.getAttribute('d');
       const choice = waves[currentWaveIndex % waves.length];
-      
+
       // Update color variables
       containerRef.current.style.setProperty('--c1', choice.colors[0]);
       containerRef.current.style.setProperty('--c2', choice.colors[1]);
       containerRef.current.style.setProperty('--c3', choice.colors[2]);
-      
+
       // Morph path
       morphRef.current.setAttribute('values', `${currentD}; ${choice.d}`);
       morphRef.current.beginElement();
@@ -64,18 +64,18 @@ const WaveAnimation: React.FC<WaveAnimationProps> = ({
             <stop offset="100%" stopColor="var(--c3)" />
           </linearGradient>
         </defs>
-        <path 
-          id="wave" 
+        <path
+          id="wave"
           ref={waveRef}
-          fill="url(#grad)" 
+          fill="url(#grad)"
           d={waves[0].d}
         >
-          <animate 
+          <animate
             ref={morphRef}
-            id="animMorph" 
-            attributeName="d" 
-            dur="2s" 
-            fill="freeze" 
+            id="animMorph"
+            attributeName="d"
+            dur="2s"
+            fill="freeze"
           />
         </path>
       </svg>
@@ -83,4 +83,4 @@ const WaveAnimation: React.FC<WaveAnimationProps> = ({
   );
 };
 
-export default WaveAnimation; 
+export default WaveAnimation;

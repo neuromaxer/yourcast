@@ -20,8 +20,8 @@ const Episode = () => {
       <div className="bg-white rounded-lg shadow-lg overflow-hidden">
         {/* Banner Image */}
         <div className="relative w-full h-[400px]">
-          <img 
-            src={episode.image} 
+          <img
+            src={episode.image}
             alt={episode.title}
             className="w-full h-full object-cover"
           />
@@ -89,14 +89,14 @@ const Episode = () => {
               <h2 className="text-2xl font-semibold mb-6 serif-headline">Similar Episodes</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {episode.similarEpisodes.map((similar) => (
-                  <Link 
-                    to={`/episode/${similar.id}`} 
+                  <Link
+                    to={`/episode/${similar.id}`}
                     key={similar.id}
                     className="group"
                   >
                     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                      <img 
-                        src={similar.thumbnail} 
+                      <img
+                        src={similar.thumbnail}
                         alt={similar.title}
                         className="w-full h-32 object-cover"
                       />

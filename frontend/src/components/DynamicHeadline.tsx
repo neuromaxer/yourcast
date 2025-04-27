@@ -60,4 +60,4 @@ const DynamicHeadline = () => {
   );
 };
 
-export default DynamicHeadline; 
+export default DynamicHeadline;

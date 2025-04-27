@@ -84,4 +84,4 @@ const HostChipsContainer = ({ hosts, selectedHosts, onHostToggle, isPlaceholder 
   );
 };
 
-export default HostChipsContainer; 
+export default HostChipsContainer;

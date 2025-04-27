@@ -20,4 +20,4 @@ export const generatePodcast = async (data: {
     console.error('Error generating podcast:', error);
     throw error;
   }
-}; 
+};

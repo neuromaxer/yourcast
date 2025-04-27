@@ -17,7 +17,7 @@ const HostChip = ({ host, isSelected, onClick, isPlaceholder = false }: HostChip
     <button
       onClick={onClick}
       disabled={isPlaceholder}
-      className={`flex items-center gap-2 px-2 py-1 rounded-full border border-black transition-all duration-300 
+      className={`flex items-center gap-2 px-2 py-1 rounded-full border border-black transition-all duration-300
         ${isPlaceholder ? 'opacity-50 cursor-not-allowed' : ''}
         ${isSelected ? 'bg-card' : 'hover:bg-card'}`}
     >

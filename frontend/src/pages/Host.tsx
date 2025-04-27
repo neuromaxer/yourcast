@@ -86,7 +86,7 @@ const Host = () => {
         <div className="w-full md:w-2/3">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">{host.name}</h1>
           <p className="text-gray-600 mb-4">{host.description}</p>
-         
+
         </div>
       </div>
 
@@ -110,7 +110,7 @@ const Host = () => {
         </div>
       </section>
 
-    
+
     </div>
   );
 };

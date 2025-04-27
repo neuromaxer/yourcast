@@ -21,4 +21,4 @@ const AudioPlayer = ({ audioUrl }: AudioPlayerProps) => {
   );
 };
 
-export default AudioPlayer; 
+export default AudioPlayer;
