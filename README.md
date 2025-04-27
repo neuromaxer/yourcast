@@ -1,12 +1,11 @@
 # YourCast
 
-YourCast is a modern podcast discovery and transcript search platform. It aggregates thousands of podcast episodes and their transcripts, making it easy to find, browse, and analyze content from a wide variety of shows.
+YourCast is a modern podcast discovery and AI-powered episode generation platform. It allows users to explore, summarize, and even generate custom podcast episodes based on their preferences.## Features
 
-## Features
-
+## 
 - **Podcast Directory:** Browse a large collection of podcasts, each with metadata and transcript counts.
-- **Episode Search:** Quickly find episodes by title, podcast, or publication date.
-- **Transcript Access:** Access and analyze transcripts for each episode.
+- **Podcast Generation** Generate your own podcasts in audio based on key ideas from other podcasts 
+- **Transcript Access:** Access and analyze key points for each episode.
 - **Modern Frontend:** Built with Vite, React, TypeScript, shadcn-ui, and Tailwind CSS for a fast and responsive user experience.
 - **API Backend:** Powered by FastAPI for robust and scalable API endpoints.
 - **Data Aggregation:** Uses Playwright for web scraping and DuckDuckGo for search integration.
