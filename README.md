@@ -11,6 +11,9 @@ YourCast is a modern podcast discovery and AI-powered episode generation platfor
 - **Data Aggregation:** Uses Playwright for web scraping and DuckDuckGo for search integration.
 - **AI & Embeddings:** Integrates with OpenAI and Pinecone for advanced search and analysis features.
 
+## Pitch Deck 
+[YourCast.pdf](YourCast.pdf)
+
 ## Technologies Used
 
 - **Frontend:** Vite, React, TypeScript, shadcn-ui, Tailwind CSS
