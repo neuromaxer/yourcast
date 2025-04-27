@@ -1,9 +1,9 @@
 import json
+import logging
 import os
+import re
 import time
 from typing import List
-import logging
-import re
 
 import openai
 from pinecone import Pinecone, ServerlessSpec
@@ -12,13 +12,14 @@ from tqdm import tqdm
 
 from yourcast.scraper.crawler import Sentence
 from yourcast.scraper.run_scrape import EpisodeScrapeResult
-from yourcast.tools.helpers import load_json, store_json, make_id
+from yourcast.tools.helpers import load_json, make_id, store_json
 from yourcast.tools.llm_helpers import OpenaiModelNames, get_llm_completion, get_llm_structured_response
 
 
 class BulletPoint(BaseModel):
     text: str
     timestamp: int
+
 
 class BulletPointMetadata(BaseModel):
     text: str
@@ -28,6 +29,7 @@ class BulletPointMetadata(BaseModel):
     published_date: str
     listen_link: str
     image: str
+
 
 class BulletPoints(BaseModel):
     episode_summary: str
@@ -73,6 +75,7 @@ Format each output as a message with its timestamp, removing any bullet points o
 episode_summaries = load_json("yourcast/assets/episode_summaries.json") if os.path.exists("yourcast/assets/episode_summaries.json") else {}
 podcast_images = load_json("yourcast/assets/podcast_images.json")
 
+
 class EpisodeParser:
     def __init__(self, pinecone_index=None):
         self.pinecone_index = pinecone_index
@@ -114,7 +117,7 @@ class EpisodeParser:
         """
 
         free_form_response = get_llm_completion(raw_parser_system_prompt, free_form_user_prompt, MODEL)
-        
+
         structured_user_prompt = f"""
         Here is the free form summary of the episode.
         {free_form_response.content}
@@ -147,7 +150,7 @@ class EpisodeParser:
             raise ValueError("Pinecone index not initialized.")
 
         for i in range(0, len(bulletpoints), batch_size):
-            batch = bulletpoints[i: i + batch_size]
+            batch = bulletpoints[i : i + batch_size]
             # Remove " (xxx sec)" from bullet point text using regex
             texts = [re.sub(r"\s*\(\d+\s*sec\)", "", bp.text) for bp in batch]
             # Batch embed

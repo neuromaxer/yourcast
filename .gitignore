@@ -2,3 +2,4 @@
 .idea
 uv.lock
 assets/scrape_results/*
+frontend/node_modules/

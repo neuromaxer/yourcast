@@ -1,10 +1,11 @@
+import hashlib
 import json
 import logging
 from logging.handlers import RotatingFileHandler
 
 import coloredlogs
 import requests
-import hashlib
+
 
 def make_id(text, idx=0):
     # Use a hash of the text and index for uniqueness
