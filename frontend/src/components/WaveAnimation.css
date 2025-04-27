@@ -1,0 +1,34 @@
+.wave-container {
+  --c1: #4facfe;
+  --c2: #43e97b;
+  --c3: #fa709a;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: #2d2d2d;
+}
+
+.wave-container svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}
+
+.wave-container svg stop {
+  transition: stop-color 1s ease;
+}
+
+.wave-container.animate #wave {
+  animation: moveWave 20s linear infinite;
+}
+
+@keyframes moveWave {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+} 
