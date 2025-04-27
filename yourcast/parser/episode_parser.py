@@ -1,4 +1,3 @@
-import hashlib
 import json
 import os
 import time
@@ -7,7 +6,7 @@ import logging
 import re
 
 import openai
-from pinecone import Index, Pinecone, ServerlessSpec
+from pinecone import Pinecone, ServerlessSpec
 from pydantic import BaseModel
 from tqdm import tqdm
 
@@ -28,6 +27,7 @@ class BulletPointMetadata(BaseModel):
     source_podcast_name: str
     published_date: str
     listen_link: str
+    image: str
 
 class BulletPoints(BaseModel):
     episode_summary: str
@@ -71,6 +71,7 @@ Format each output as a message with its timestamp, removing any bullet points o
 """
 
 episode_summaries = load_json("yourcast/assets/episode_summaries.json") if os.path.exists("yourcast/assets/episode_summaries.json") else {}
+podcast_images = load_json("yourcast/assets/podcast_images.json")
 
 class EpisodeParser:
     def __init__(self, pinecone_index=None):
@@ -166,6 +167,7 @@ class EpisodeParser:
                             source_podcast_name=source_podcast_name,
                             published_date=published_date,
                             listen_link=listen_link,
+                            image=podcast_images[source_podcast_name],
                         ).model_dump(),
                     }
                 )
