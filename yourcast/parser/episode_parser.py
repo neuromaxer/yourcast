@@ -4,6 +4,7 @@ import os
 import time
 from typing import List
 import logging
+import re
 
 import openai
 from pinecone import Index, Pinecone, ServerlessSpec
@@ -12,16 +13,24 @@ from tqdm import tqdm
 
 from yourcast.scraper.crawler import Sentence
 from yourcast.scraper.run_scrape import EpisodeScrapeResult
-from yourcast.tools.helpers import load_json, store_json
+from yourcast.tools.helpers import load_json, store_json, make_id
 from yourcast.tools.llm_helpers import OpenaiModelNames, get_llm_completion, get_llm_structured_response
 
 
 class BulletPoint(BaseModel):
-    bullet_point: str
+    text: str
     timestamp: int
 
+class BulletPointMetadata(BaseModel):
+    text: str
+    timestamp: int
+    episode_name: str
+    source_podcast_name: str
+    published_date: str
+    listen_link: str
 
 class BulletPoints(BaseModel):
+    episode_summary: str
     bullet_points: List[BulletPoint]
 
 
@@ -51,18 +60,17 @@ You are a professional content editor specializing in creating concise, impactfu
 Your task is to transform bullet points with supporting details into clear, compelling message. For each bullet point:
 
 1. Combine the main point and supporting details into a coherent message that can consist of multiple short, punchy sentences.
-2. Keep the original timestamp from the main point.
-3. Maintain all key information while being as concise and engaging as possible.
-4. Write in a style that maximizes curiosity and interest—make each message so intriguing that a reader wants to listen to the podcast to learn more.
-5. Remove any bullet point formatting or indentation.
-6. Ensure each message is self-contained, informative, and irresistible to click.
-7. Process ALL bullet points from the input—do not skip any.
-8. Remove timestamp from the bulletpoint text
+2. Maintain all key information while being as concise and engaging as possible.
+3. Write in a style that maximizes curiosity and interest—make each message so intriguing that a reader wants to listen to the podcast to learn more.
+4. Ensure each message is self-contained, informative, and irresistible to click.
+5. Process ALL bullet points from the input—do not skip any.
 9. Each bulletpoint text should be no longer than 140 characters
+10. Also provide a summary of the episode in the episode_summary field which should be no longer than 280 characters
 
 Format each output as a message with its timestamp, removing any bullet points or indentation while preserving all key information in a concise, engaging format. Return a complete list of all processed bullet points.
 """
 
+episode_summaries = load_json("yourcast/assets/episode_summaries.json") if os.path.exists("yourcast/assets/episode_summaries.json") else {}
 
 class EpisodeParser:
     def __init__(self, pinecone_index=None):
@@ -95,7 +103,7 @@ class EpisodeParser:
 
     def parse(self, scraped_episode_file: EpisodeScrapeResult):
         transcript = self.concatenate_sentences(scraped_episode_file.sentences)
-        user_prompt = f"""
+        free_form_user_prompt = f"""
         Here is the podcast transcript. Please extract the key takeaways following the format specified in the system prompt.
 
         Transcript:
@@ -103,10 +111,19 @@ class EpisodeParser:
 
         Please provide a comprehensive summary with bullet points that capture the most important insights and information from the transcript.
         """
-        free_form_response = get_llm_completion(raw_parser_system_prompt, user_prompt, MODEL)
-        structured_response = get_llm_structured_response(structured_parser_system_prompt, free_form_response.content, BulletPoints, MODEL)
+
+        free_form_response = get_llm_completion(raw_parser_system_prompt, free_form_user_prompt, MODEL)
+        
+        structured_user_prompt = f"""
+        Here is the free form summary of the episode.
+        {free_form_response.content}
+
+        Please transform the bullet points into a concise, engaging message and provide a summary of the episode in the episode_summary field
+        """
+        structured_response = get_llm_structured_response(structured_parser_system_prompt, structured_user_prompt, BulletPoints, MODEL)
         parsed_bulletpoints = BulletPoints(**json.loads(structured_response.content))
-        store_json(parsed_bulletpoints.model_dump(), "example_bulletpoints")
+        episode_summaries[scraped_episode_file.episode_name] = parsed_bulletpoints.episode_summary
+        store_json(episode_summaries, "yourcast/assets/episode_summaries.json")
         return parsed_bulletpoints
 
     def concatenate_sentences(self, sentences: list[Sentence]):
@@ -128,13 +145,10 @@ class EpisodeParser:
         if not self.pinecone_index:
             raise ValueError("Pinecone index not initialized.")
 
-        def make_id(text, idx):
-            # Use a hash of the text and index for uniqueness
-            return hashlib.md5(f"{text}_{idx}".encode()).hexdigest()
-
         for i in range(0, len(bulletpoints), batch_size):
-            batch = bulletpoints[i : i + batch_size]
-            texts = [bp.bullet_point for bp in batch]
+            batch = bulletpoints[i: i + batch_size]
+            # Remove " (xxx sec)" from bullet point text using regex
+            texts = [re.sub(r"\s*\(\d+\s*sec\)", "", bp.text) for bp in batch]
             # Batch embed
             response = openai.embeddings.create(input=texts, model="text-embedding-3-small")
             embeddings = [d.embedding for d in response.data]
@@ -143,16 +157,16 @@ class EpisodeParser:
             for idx, (bp, emb) in enumerate(zip(batch, embeddings)):
                 upserts.append(
                     {
-                        "id": make_id(bp.bullet_point, i + idx),
+                        "id": make_id(bp.text, i + idx),
                         "values": emb,
-                        "metadata": {
-                            "source_podcast_name": source_podcast_name,
-                            "published_date": published_date,
-                            "episode_name": episode_name,
-                            "listen_link": listen_link,
-                            "timestamp": bp.timestamp,
-                            "text": bp.bullet_point,
-                        },
+                        "metadata": BulletPointMetadata(
+                            text=bp.text,
+                            timestamp=bp.timestamp,
+                            episode_name=episode_name,
+                            source_podcast_name=source_podcast_name,
+                            published_date=published_date,
+                            listen_link=listen_link,
+                        ).model_dump(),
                     }
                 )
             # Upsert to Pinecone
