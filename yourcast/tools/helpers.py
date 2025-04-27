@@ -4,6 +4,11 @@ from logging.handlers import RotatingFileHandler
 
 import coloredlogs
 import requests
+import hashlib
+
+def make_id(text, idx=0):
+    # Use a hash of the text and index for uniqueness
+    return hashlib.md5(f"{text}_{idx}".encode()).hexdigest()
 
 
 def setup_logger(name, log_file, level=logging.INFO):
