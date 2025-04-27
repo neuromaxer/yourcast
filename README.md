@@ -1,8 +1,8 @@
 # YourCast
 
-YourCast is a modern podcast discovery and AI-powered episode generation platform. It allows users to explore, summarize, and even generate custom podcast episodes based on their preferences.## Features
+YourCast is a modern podcast discovery and AI-powered episode generation platform. It allows users to explore, summarize, and even generate custom podcast episodes based on their preferences.
 
-## 
+## Features
 - **Podcast Directory:** Browse a large collection of podcasts, each with metadata and transcript counts.
 - **Podcast Generation** Generate your own podcasts in audio based on key ideas from other podcasts 
 - **Transcript Access:** Access and analyze key points for each episode.
