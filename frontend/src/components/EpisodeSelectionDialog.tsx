@@ -127,7 +127,7 @@ const EpisodeSelectionDialog = ({
               isAnimating={isAnimating}
               currentWaveIndex={waveIndex}
               onWaveChange={handleWaveChange}
-              className="w-full h-full"
+              className="w-full h-full !w-full !max-w-none"
             />
           </div>
           <div className="relative z-10 px-6 pt-6 pb-4 text-center">
